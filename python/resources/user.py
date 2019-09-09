@@ -19,6 +19,18 @@ class GetUser(Resource):
 			return 'No users here', 404
 
 
+class GetUserAll(Resource):
+	def get(self):
+		db_user = mongo.db.user
+		users = dumps(db_user.find())
+
+		if(users):
+			return json.loads(users), 200
+		else:
+			return 'No users here', 404
+
+
+
 class GetUserOne(Resource):
 	def get(self, id):
 		db_user = mongo.db.user
