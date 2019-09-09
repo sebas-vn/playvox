@@ -9,7 +9,7 @@ services:
       - "5000:5000"
   client:
     build:
-      context: ./vue
+      context: ./vue/prueba
       dockerfile: Dockerfile
     ports:
       - 8080:8080
